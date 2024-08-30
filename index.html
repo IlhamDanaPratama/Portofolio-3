@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - 3</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">PORTOFOLIO - 3</h1>
+        <div class="project">
+            <h2>Rancang Bangun Pakan Ayam Otomatis Berbasis Internet Of Things Menggunakan ESP8266</h2>
+            <p>Tools: SolidWorks, Arduino IDE, Fritzing, Microsoft Excel</p>
+            <p>Project ini menggunakan ESP8266 sebagai microcontroller, menggunakan rel dengan penggerak motor stepper dan IoT untuk memonitoring jadwal pemberi makan ayam sesuai waktu yang telah disetting. Sistem kerja ketika waktu sudah kita setting maka motor stepper akan menggerakkan rel sampai menyentuh limit switch, kemudian akan kembali ke titik awal. Proses berjalannya sistem akan dimonitoring menggunakan aplikasi Blynk IoT.</p>
+            
+            <div class="image-section">
+                <img src="solid.jpg" alt="esain Kerangka Prototype Menggunakan SolidWorks" class="fadeIn">
+                <div class="description fadeIn">
+                    <p><strong>Desain Kerangka Prototype Menggunakan SolidWorks:</strong> Pada tahap ini, model 3D dari kerangka prototype dirancang menggunakan SolidWorks. Desain ini mencakup detail teknis mengenai struktur mekanik sistem pemberi makan ayam otomatis, termasuk penempatan komponen elektronik, motor stepper, dan rel. SolidWorks digunakan untuk memvisualisasikan dan memastikan bahwa semua komponen dapat berfungsi secara efektif dalam ruang yang tersedia.</p>
+                </div>
+            </div>
+
+            <div class="image-section reverse">
+                <img src="frit.jpg" alt="Desain Rangkaian Elektronika Menggunakan Fritzing" class="fadeIn">
+                <div class="description fadeIn">
+                    <p><strong>Desain Rangkaian Elektronika Menggunakan Fritzing:</strong> Pada tahap ini, desain rangkaian elektronika dari sistem dibuat menggunakan Fritzing. Fritzing membantu dalam membuat skema rangkaian yang jelas dan mudah dipahami, termasuk bagaimana sensor, microcontroller, motor, dan komponen lain dihubungkan. Rangkaian ini kemudian diimplementasikan pada breadboard sebelum dipasang pada PCB untuk prototype akhir.</p>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <img src="ide.png" alt="Membuat Script Prototype Menggunakan Arduino IDE" class="fadeIn">
+                <div class="description fadeIn">
+                    <p><strong>Membuat Script Prototype Menggunakan Arduino IDE:</strong> Script yang diperlukan untuk menjalankan sistem dibuat menggunakan Arduino IDE. Script ini mengatur logika kerja dari ESP8266, termasuk pemrograman untuk mengontrol motor stepper, membaca data dari sensor, dan mengirimkan informasi ke aplikasi Blynk IoT. Script juga mencakup pengaturan waktu otomatis untuk pemberian makan ayam sesuai jadwal yang telah ditentukan.</p>
+                </div>
+            </div>
+
+            <div class="image-section reverse">
+                <img src="cloud.jpg" alt="Desain Dashboard Menggunakan Cloud Blynk IoT" class="fadeIn">
+                <div class="description fadeIn">
+                    <p><strong>Desain Dashboard Menggunakan Cloud Blynk IoT:</strong> Terakhir, desain dashboard untuk memonitoring dan mengendalikan sistem pemberi makan ayam dibuat menggunakan Cloud Blynk IoT. Dashboard ini menampilkan data real-time mengenai status sistem, termasuk waktu pemberian makan, kondisi sensor, dan status motor. Pengguna dapat mengakses dashboard ini melalui smartphone untuk memantau dan menyesuaikan pengaturan sistem dari jarak jauh.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Image Zoom -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the images and insert them inside the modal
+        var imgs = document.querySelectorAll(".image-section img");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        imgs.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
